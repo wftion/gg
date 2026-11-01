@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Язык программирования C</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header id="top">
+    <h1>Язык программирования C</h1>
+    <p><em>Статья подготовлена в рамках учебного задания</em></p>
+</header>
+
+<nav>
+    <h2>Содержание</h2>
+    <ul>
+        <li><a href="#history">1. История создания</a></li>
+        <li><a href="#overview">2. Краткий обзор языка</a></li>
+        <li><a href="#examples">3. Примеры кода</a></li>
+        <li><a href="#tags-list">4. Список использованных тегов и CSS-свойств</a></li>
+    </ul>
+</nav>
+
+<main>
+    <!-- ==================== РАЗДЕЛ 1 ==================== -->
+    <section id="history">
+    <h2>История создания</h2>
+
+    <img src="images/c-history.png" alt="История языка C" class="img-left" width="200">
+
+    <p>Язык <strong>C</strong> был разработан <strong>Деннисом Ритчи</strong> в компании <em>Bell Labs</em> в начале <mark>1970-х годов</mark>. Он стал развитием языка <strong>B</strong>, который, в свою очередь, происходил от языка <strong>BCPL</strong>. Первоначальной целью было создание удобного языка для написания операционной системы <abbr title="Unix">UNIX</abbr>.</p>
+
+    <p>Работа над языком началась в <mark>1969 году</mark>, а первая официальная версия появилась около <mark>1972 года</mark>. В <mark>1978 году</mark> Брайан Керниган и Деннис Ритчи опубликовали книгу <q>The C Programming Language</q> — знаменитый «K&amp;R», который долгое время служил неофициальным стандартом языка.</p>
+
+    <p>В <mark>1989 году</mark> язык был стандартизирован <abbr title="American National Standards Institute">ANSI</abbr>, эта версия известна как <dfn>C89</dfn> (или ANSI C). Позже появились стандарты C99, C11, C17 и C23. Именно C стал основой для множества современных языков: <strong>C++</strong>, <strong>Java</strong>, <strong>C#</strong>, <strong>Go</strong> и других.</p>
+
+    <img src="images/c-logo.png" alt="Логотип языка C" class="img-right" width="180">
+
+    <p>Сегодня C остаётся одним из самых востребованных языков для системного программирования, разработки операционных систем, встраиваемых устройств и компиляторов. Подробнее с историей можно ознакомиться в <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B8_(%D1%8F%D0%B7%D1%8B%D0%BA_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)" target="_blank" rel="noopener">статье Википедии</a>.</p>
+
+    <div class="clearfix"></div>
+</section>
+
+    <!-- ==================== РАЗДЕЛ 2 ==================== -->
+    <section id="overview">
+    <h2>Краткий обзор языка</h2>
+
+    <img src="images/c-code-example.png" alt="Пример кода на C" class="img-center" width="250">
+
+    <p><strong>C</strong> — это <strong>процедурный</strong> язык программирования общего назначения с <strong>статической типизацией</strong>. Он предоставляет низкоуровневый доступ к памяти через указатели, но при этом остаётся достаточно высокоуровневым для написания переносимых программ.</p>
+
+    <h3>Основные характеристики</h3>
+
+    <ul>
+        <li><strong>Процедурный</strong> — программа строится из функций.</li>
+        <li><strong>Статическая типизация</strong> — тип переменной известен на этапе компиляции.</li>
+        <li><strong>Низкоуровневый доступ к памяти</strong> — указатели и ручное управление памятью.</li>
+        <li><strong>Компилируемый</strong> — код транслируется в машинный язык.</li>
+        <li><strong>Переносимый</strong> — при соблюдении стандарта код работает на разных платформах.</li>
+        <li><strong>Небольшой набор ключевых слов</strong> — всего около 32 в стандарте C89.</li>
+    </ul>
+
+    <h3>Типы данных</h3>
+
+    <p>Основные примитивные типы C: <code>char</code>, <code>int</code>, <code>float</code>, <code>double</code>, а также модификаторы <code>short</code>, <code>long</code>, <code>signed</code>, <code>unsigned</code>. Производные типы включают массивы, структуры (<code>struct</code>), объединения (<code>union</code>), перечисления (<code>enum</code>) и указатели.</p>
+
+    <h3>Области применения</h3>
+
+    <table>
+        <caption>Основные сферы использования языка C</caption>
+        <thead>
+            <tr>
+                <th scope="col">Сфера</th>
+                <th scope="col">Примеры</th>
+                <th scope="col">Описание</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Системное программирование</td>
+                <td>Ядра ОС (Linux, Windows)</td>
+                <td>Разработка операционных систем и драйверов</td>
+            </tr>
+            <tr>
+                <td>Встраиваемые системы</td>
+                <td>Arduino, микроконтроллеры</td>
+                <td>Программирование устройств с ограниченными ресурсами</td>
+            </tr>
+            <tr>
+                <td>Компиляторы и интерпретаторы</td>
+                <td>GCC, Clang, CPython</td>
+                <td>Создание языков программирования и инструментов</td>
+            </tr>
+            <tr>
+                <td>Игры и графика</td>
+                <td>OpenGL, игровые движки</td>
+                <td>Высокопроизводительная графика и вычисления</td>
+            </tr>
+            <tr>
+                <td>Базы данных</td>
+                <td>SQLite, PostgreSQL</td>
+                <td>Реализация СУБД и высоконагруженных систем</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Популярность</h3>
+
+    <p>Язык C стабильно входит в <strong>топ-5</strong> самых популярных языков программирования согласно индексу TIOBE. Ознакомиться с текущим рейтингом можно на <a href="https://www.tiobe.com/tiobe-index/" target="_blank" rel="noopener">официальном сайте TIOBE</a>.</p>
+
+    <p>C остаётся фундаментом современной информатики: на нём написаны ядра большинства операционных систем, интерпретаторы популярных языков и миллионы встраиваемых устройств. Вернуться к <a href="#top">началу статьи</a>.</p>
+</section>
+
+    <!-- ==================== РАЗДЕЛ 3 ==================== -->
+    <section id="examples">
+    <h2>Примеры кода</h2>
+
+    <p>Классический пример программы «Hello, World!» на языке C:</p>
+
+<pre><code><span class="kw">#include</span> <span class="str">&lt;stdio.h&gt;</span>
+
+<span class="kw">int</span> <span class="fn">main</span>(<span class="kw">void</span>) {
+    <span class="fn">printf</span>(<span class="str">"Hello, World!\n"</span>);
+    <span class="kw">return</span> <span class="num">0</span>;
+}</code></pre>
+
+    <p>Пример работы с указателями и динамической памятью:</p>
+
+<pre><code><span class="kw">#include</span> <span class="str">&lt;stdio.h&gt;</span>
+<span class="kw">#include</span> <span class="str">&lt;stdlib.h&gt;</span>
+
+<span class="kw">int</span> <span class="fn">main</span>(<span class="kw">void</span>) {
+    <span class="kw">int</span> *arr = (<span class="kw">int</span>*) <span class="fn">malloc</span>(<span class="num">5</span> * <span class="kw">sizeof</span>(<span class="kw">int</span>));
+    <span class="kw">if</span> (arr == <span class="kw">NULL</span>) {
+        <span class="fn">printf</span>(<span class="str">"Ошибка выделения памяти\n"</span>);
+        <span class="kw">return</span> <span class="num">1</span>;
+    }
+    <span class="kw">for</span> (<span class="kw">int</span> i = <span class="num">0</span>; i &lt; <span class="num">5</span>; i++) {
+        arr[i] = i * i;
+    }
+    <span class="kw">for</span> (<span class="kw">int</span> i = <span class="num">0</span>; i &lt; <span class="num">5</span>; i++) {
+        <span class="fn">printf</span>(<span class="str">"%d "</span>, arr[i]);
+    }
+    <span class="fn">free</span>(arr);
+    <span class="kw">return</span> <span class="num">0</span>;
+}</code></pre>
+
+    <p>Пример работы со структурами и строками:</p>
+
+<pre><code><span class="kw">#include</span> <span class="str">&lt;stdio.h&gt;</span>
+<span class="kw">#include</span> <span class="str">&lt;string.h&gt;</span>
+
+<span class="kw">struct</span> <span class="cls">Person</span> {
+    <span class="kw">char</span> name[<span class="num">50</span>];
+    <span class="kw">int</span> age;
+};
+
+<span class="kw">int</span> <span class="fn">main</span>(<span class="kw">void</span>) {
+    <span class="kw">struct</span> <span class="cls">Person</span> p;
+    <span class="fn">strcpy</span>(p.name, <span class="str">"Иван"</span>);
+    p.age = <span class="num">25</span>;
+    <span class="fn">printf</span>(<span class="str">"Имя: %s, возраст: %d\n"</span>, p.name, p.age);
+    <span class="kw">return</span> <span class="num">0</span>;
+}</code></pre>
+
+    <h3>Инструменты разработки</h3>
+
+    <p>Для работы с языком C используются следующие инструменты:</p>
+
+    <ol>
+        <li><strong>GCC</strong> — компилятор GNU Compiler Collection.</li>
+        <li><strong>Clang</strong> — современный компилятор на основе LLVM.</li>
+        <li><strong>Visual Studio / CLion</strong> — среды разработки.</li>
+        <li><strong>Make / CMake</strong> — системы сборки проектов.</li>
+        <li><strong>GDB</strong> — отладчик.</li>
+    </ol>
+
+    <h3>Полезные ресурсы</h3>
+
+    <p>Для изучения языка C рекомендуются:</p>
+
+    <ul class="custom-bullets">
+        <li><a href="https://en.cppreference.com/w/c" target="_blank" rel="noopener">cppreference.com — справочник по C</a></li>
+        <li><a href="https://ru.stackoverflow.com/questions/tagged/c" target="_blank" rel="noopener">Stack Overflow на русском (тег C)</a></li>
+        <li><a href="https://www.learn-c.org/" target="_blank" rel="noopener">Learn-C.org — интерактивный курс</a></li>
+    </ul>
+</section>
+
+    <!-- ==================== СПИСОК ТЕГОВ И СВОЙСТВ ==================== -->
+    <section id="tags-list">
+        <h2>Список использованных тегов и CSS-свойств</h2>
+
+        <h3>HTML-теги (30+)</h3>
+        <p class="tags-cloud">
+            <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>,
+            <code>&lt;meta&gt;</code>, <code>&lt;title&gt;</code>, <code>&lt;link&gt;</code>,
+            <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>,
+            <code>&lt;section&gt;</code>, <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>,
+            <code>&lt;h3&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;ul&gt;</code>,
+            <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code>, <code>&lt;table&gt;</code>,
+            <code>&lt;caption&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>,
+            <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;td&gt;</code>,
+            <code>&lt;img&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>,
+            <code>&lt;em&gt;</code>, <code>&lt;mark&gt;</code>, <code>&lt;q&gt;</code>,
+            <code>&lt;dfn&gt;</code>, <code>&lt;abbr&gt;</code>, <code>&lt;code&gt;</code>,
+            <code>&lt;pre&gt;</code>, <code>&lt;span&gt;</code>, <code>&lt;div&gt;</code>
+        </p>
+
+        <h3>CSS-свойства (40+)</h3>
+        <p class="tags-cloud">
+            <code>font-family</code>, <code>font-size</code>, <code>font-weight</code>,
+            <code>font-style</code>, <code>line-height</code>, <code>color</code>,
+            <code>background-color</code>, <code>background-image</code>, <code>margin</code>,
+            <code>padding</code>, <code>border</code>, <code>border-radius</code>,
+            <code>text-align</code>, <code>text-decoration</code>, <code>text-transform</code>,
+            <code>letter-spacing</code>, <code>word-spacing</code>, <code>float</code>,
+            <code>clear</code>, <code>width</code>, <code>max-width</code>,
+            <code>height</code>, <code>display</code>, <code>position</code>,
+            <code>box-shadow</code>, <code>overflow</code>, <code>white-space</code>,
+            <code>list-style-type</code>, <code>list-style-image</code>, <code>vertical-align</code>,
+            <code>border-collapse</code>, <code>border-spacing</code>, <code>caption-side</code>,
+            <code>transition</code>, <code>opacity</code>, <code>cursor</code>,
+            <code>outline</code>, <code>box-sizing</code>, <code>flex</code>,
+            <code>gap</code>, <code>grid-template-columns</code>, <code>content</code>
+        </p>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026. Учебный проект. <a href="#top">Наверх</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,392 @@
+/* ========== ПОДКЛЮЧЕНИЕ ЛОКАЛЬНОГО ШРИФТА ========== */
+@font-face {
+    font-family: 'MontserratAlternates';
+    src: url('../fonts/MontserratAlternates-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ========== БАЗОВЫЕ СТИЛИ ========== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'MontserratAlternates', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #2c3e50;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* ========== ЗАГОЛОВКИ ========== */
+h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a252f;
+    text-align: center;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2980b9;
+    border-bottom: 2px solid #2980b9;
+    padding-bottom: 6px;
+    margin-top: 30px;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #34495e;
+    margin-top: 20px;
+}
+
+/* ========== ШАПКА ========== */
+header {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #ffffff;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: #ffffff;
+    border: none;
+}
+
+header em {
+    color: #d5e0f0;
+}
+
+/* ========== НАВИГАЦИЯ (ОГЛАВЛЕНИЕ) ========== */
+nav {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin: 20px auto;
+    padding: 15px 25px;
+    max-width: 800px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+nav h2 {
+    font-size: 18px;
+    margin-top: 0;
+    border-bottom: none;
+}
+
+nav ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+nav li {
+    margin: 8px 0;
+}
+
+nav a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #e74c3c;
+    text-decoration: underline;
+}
+
+/* ========== ОСНОВНОЙ КОНТЕНТ ========== */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+/* ========== ССЫЛКИ ========== */
+a {
+    color: #2980b9;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #e74c3c;
+}
+
+a:visited {
+    color: #8e44ad;
+}
+
+/* ========== ВЫДЕЛЕНИЕ ТЕКСТА ========== */
+mark {
+    background-color: #f1c40f;
+    color: #2c3e50;
+    padding: 0 3px;
+    border-radius: 3px;
+}
+
+strong {
+    color: #c0392b;
+}
+
+em {
+    font-style: italic;
+    color: #7f8c8d;
+}
+
+q {
+    font-style: italic;
+    color: #16a085;
+}
+
+dfn {
+    font-style: normal;
+    font-weight: 600;
+    color: #2980b9;
+}
+
+abbr {
+    text-decoration: underline dotted;
+    cursor: help;
+}
+
+/* ========== КАРТИНКИ С ОБТЕКАНИЕМ ========== */
+.img-left {
+    float: left;
+    margin: 0 20px 15px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+}
+
+.img-right {
+    float: right;
+    margin: 0 0 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+}
+
+.img-center {
+    display: block;
+    margin: 15px auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+}
+
+.img-left:hover,
+.img-right:hover,
+.img-center:hover {
+    transform: scale(1.03);
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* ========== СПИСКИ ========== */
+ul {
+    list-style-type: disc;
+    padding-left: 25px;
+}
+
+ol {
+    list-style-type: decimal;
+    padding-left: 25px;
+}
+
+li {
+    margin: 6px 0;
+}
+
+/* Маркированный список с картинкой-маркером */
+.custom-bullets {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.custom-bullets li {
+    background-image: url('../images/bullet.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 16px;
+    padding-left: 24px;
+    margin: 8px 0;
+}
+
+/* ========== ТАБЛИЦА ========== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    border: 1px solid #bdc3c7;
+}
+
+caption {
+    caption-side: top;
+    font-weight: 700;
+    font-size: 15px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+th {
+    background-color: #2980b9;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #1f618d;
+}
+
+td {
+    padding: 10px 15px;
+    border: 1px solid #d5dbdb;
+    vertical-align: top;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ecf0f1;
+}
+
+tbody tr:hover {
+    background-color: #d6eaf8;
+}
+
+/* ========== БЛОКИ КОДА С ПОДСВЕТКОЙ ========== */
+pre {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    border: 1px solid #333;
+}
+
+code {
+    font-family: 'Consolas', 'Courier New', monospace;
+}
+
+/* Подсветка: ключевые слова */
+.kw {
+    color: #c586c0;
+    font-weight: 600;
+}
+
+/* Подсветка: классы */
+.cls {
+    color: #4ec9b0;
+}
+
+/* Подсветка: методы */
+.fn {
+    color: #dcdcaa;
+}
+
+/* Подсветка: строки */
+.str {
+    color: #ce9178;
+}
+
+/* Подсветка: числа */
+.num {
+    color: #b5cea8;
+}
+
+/* Инлайн-код в тексте */
+p code {
+    background-color: #f4f4f4;
+    color: #c0392b;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 13px;
+    border: 1px solid #e0e0e0;
+}
+
+/* ========== СПИСОК ТЕГОВ И СВОЙСТВ ========== */
+.tags-cloud {
+    line-height: 2.2;
+}
+
+.tags-cloud code {
+    display: inline-block;
+    background-color: #eaf2f8;
+    color: #2c3e50;
+    padding: 4px 10px;
+    margin: 3px;
+    border-radius: 15px;
+    font-size: 12px;
+    border: 1px solid #aed6f1;
+    transition: background-color 0.2s;
+}
+
+.tags-cloud code:hover {
+    background-color: #aed6f1;
+}
+
+/* ========== ПОДВАЛ ========== */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #1a252f;
+    color: #bdc3c7;
+    font-size: 13px;
+}
+
+footer a {
+    color: #f1c40f;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ========== АДАПТИВНОСТЬ ========== */
+@media (max-width: 600px) {
+    .img-left,
+    .img-right {
+        float: none;
+        display: block;
+        margin: 15px auto;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th,
+    td {
+        padding: 8px 10px;
+    }
+}
