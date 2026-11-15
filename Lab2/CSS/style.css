@@ -1,0 +1,49 @@
+/* Сброс базовых стилей */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+/* Контейнер для адаптивной сетки */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Стили для каждой ячейки (строго высота 150px по заданию) */
+.box {
+    height: 150px;
+    background-color: #3498db;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    border-radius: 8px;
+    /* По умолчанию для мобильных (1 колонка) */
+    flex: 1 1 100%; 
+}
+
+/* Настройки для планшетов (ширина от 768px до 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .box {
+        flex: 1 1 calc(50% - 20px); /* 2 колонки */
+    }
+}
+
+/* Настройки для десктопов (ширина от 1200px и выше) */
+@media (min-width: 1200px) {
+    .box {
+        flex: 1 1 calc(33.333% - 20px); /* 3 колонки */
+    }
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 1 - Flexbox Цифры (86)</title>
+    <style>
+        /* Единственный разрешенный цвет в CSS */
+        body {
+            background-color: #f0f0f0;
+        }
+
+        /* Обертка для центрирования на весь экран */
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        /* Контейнер для цифр, выстраивает их в ряд */
+        .digits {
+            display: flex;
+            gap: 40px; 
+        }
+
+        /* Сетка для одной цифры (3 колонки, 5 строк) */
+        .number {
+            display: grid;
+            grid-template-columns: repeat(3, 40px);
+            grid-template-rows: repeat(5, 40px);
+            gap: 5px; 
+        }
+
+        /* Стили для каждого квадратного блока */
+        .cell {
+            width: 40px;
+            height: 40px;
+            background-color: transparent; /* Блоки прозрачные */
+            border: 2px solid #333; /* Контур */
+            box-sizing: border-box;
+        }
+
+        /* Невидимые блоки (пустоты в сетке) */
+        .empty {
+            visibility: hidden;
+        }
+
+        /* Адаптивность: если экран меньше 768px, скрываем обертку */
+        @media (max-width: 768px) {
+            .wrapper {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="digits">
+            
+            <!-- ЦИФРА 8 -->
+            <div class="number">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                
+                <div class="cell"></div>
+                <div class="cell empty"></div>
+                <div class="cell"></div>
+                
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                
+                <div class="cell"></div>
+                <div class="cell empty"></div>
+                <div class="cell"></div>
+                
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+
+            <!-- ЦИФРА 6 -->
+            <div class="number">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                
+                <div class="cell"></div>
+                <div class="cell empty"></div>
+                <div class="cell empty"></div>
+                
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                
+                <div class="cell"></div>
+                <div class="cell empty"></div>
+                <div class="cell"></div>
+                
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
