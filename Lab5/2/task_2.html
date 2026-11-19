@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 2 - Вариант 10</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f4f7f6; }
+        h1 { color: #333; }
+        .result { background: #fff; padding: 15px; margin: 10px 0; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .label { font-weight: bold; color: #2c3e50; }
+        .value { color: #c0392b; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Задание 2. Обработка массива действительных чисел</h1>
+    
+    <div id="output"></div>
+
+    <script>
+        const arr = [1.5, 12.3, 121.7, -45.1, 5.9, 1234.2, 7.4, 88.8];
+
+        function partA(arr) {
+            let lastIndex = -1;
+            for (let i = arr.length - 1; i >= 0; i--) {
+                if (Math.sin(arr[i]) < 0) {
+                    lastIndex = i;
+                    break;
+                }
+            }
+            if (lastIndex === -1) return null;
+            
+            let product = 1;
+            for (let i = lastIndex; i < arr.length; i++) {
+                product *= arr[i];
+            }
+            return product;
+        }
+
+        function isPalindrome(num) {
+            const str = Math.abs(Math.trunc(num)).toString();
+            const reversed = str.split('').reverse().join('');
+            return str === reversed;
+        }
+
+        function partB(arr) {
+            const result = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (!isPalindrome(arr[i])) {
+                    result.push(arr[i]);
+                }
+            }
+            return result;
+        }
+
+        const output = document.getElementById('output');
+
+        const div1 = document.createElement('div');
+        div1.className = 'result';
+        div1.innerHTML = `<span class="label">Исходный массив:</span> [${arr.join(', ')}]`;
+        output.appendChild(div1);
+
+        const div2 = document.createElement('div');
+        div2.className = 'result';
+        const prod = partA(arr);
+        div2.innerHTML = `<span class="label">Часть А:</span> произведение от последнего элемента с sin < 0 до конца = <span class="value">${prod !== null ? prod.toFixed(2) : 'не найдено'}</span>`;
+        output.appendChild(div2);
+
+        const div3 = document.createElement('div');
+        div3.className = 'result';
+        const filtered = partB(arr);
+        div3.innerHTML = `<span class="label">Часть Б:</span> массив без элементов-палиндромов = <span class="value">[${filtered.join(', ')}]</span>`;
+        output.appendChild(div3);
+    </script>
+</body>
+</html>

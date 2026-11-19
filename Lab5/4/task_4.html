@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 4 - Вариант 10</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f4f7f6; }
+        h1 { color: #333; }
+        .result { background: #fff; padding: 15px; margin: 10px 0; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .yes { color: #27ae60; font-weight: bold; }
+        .no { color: #c0392b; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Задание 4. Проверка предложения на панграмму</h1>
+    <p>Панграмма — предложение, содержащее все буквы русского алфавита.</p>
+    
+    <div id="output"></div>
+
+    <script>
+        const alphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
+
+        function isPangram(text) {
+            const lower = text.toLowerCase();
+            for (let i = 0; i < alphabet.length; i++) {
+                if (!lower.includes(alphabet[i])) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        const sentences = [
+            'Съешь же ещё этих мягких французских булок да выпей чаю',
+            'Это короткое предложение',
+            'Широкая электрификация южных губерний даст мощный толчок подъёму сельского хозяйства'
+        ];
+
+        const output = document.getElementById('output');
+
+        sentences.forEach(sentence => {
+            const result = isPangram(sentence);
+            const div = document.createElement('div');
+            div.className = 'result';
+            const status = result ? '<span class="yes">ПАНГРАММА</span>' : '<span class="no">НЕ ПАНГРАММА</span>';
+            div.innerHTML = `«${sentence}» — ${status}`;
+            output.appendChild(div);
+        });
+    </script>
+</body>
+</html>
