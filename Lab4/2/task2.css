@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f7f6;
+    font-family: Arial, sans-serif;
+    padding-top: 50px;
+}
+
+h1 {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 24px;
+}
+
+.hint {
+    color: #777;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.puzzle-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 2px;
+    width: 400px;
+    height: 400px;
+    background-color: #000;
+    border: 5px solid #16213e;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.piece {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: assemble 1.5s ease-out forwards;
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.piece:hover {
+    transform: scale(1.3) rotate(10deg);
+    filter: brightness(1.5);
+    z-index: 10;
+    box-shadow: 0 0 20px #fff;
+    border-radius: 5px;
+}
+
+@keyframes assemble {
+    0% {
+        opacity: 0;
+        transform: translate(var(--startX), var(--startY)) scale(0.2) rotate(180deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+}
+
+.p1  { background: #ff9a9e; --startX: -500px; --startY: -500px; animation-delay: 0.1s; }
+.p2  { background: #fad0c4; --startX: 500px;  --startY: -500px; animation-delay: 0.2s; }
+.p3  { background: #ffd1ff; --startX: -500px; --startY: 500px;  animation-delay: 0.3s; }
+.p4  { background: #fbc2eb; --startX: 500px;  --startY: 500px;  animation-delay: 0.4s; }
+.p5  { background: #a18cd1; --startX: -500px; --startY: -500px; animation-delay: 0.5s; }
+.p6  { background: #fbc2eb; --startX: 500px;  --startY: -500px; animation-delay: 0.6s; }
+.p7  { background: #a1c4fd; --startX: -500px; --startY: 500px;  animation-delay: 0.7s; }
+.p8  { background: #c2e9fb; --startX: 500px;  --startY: 500px;  animation-delay: 0.8s; }
+.p9  { background: #ffecd2; --startX: -500px; --startY: -500px; animation-delay: 0.9s; }
+.p10 { background: #fcb69f; --startX: 500px;  --startY: -500px; animation-delay: 1.0s; }
+.p11 { background: #ff9a9e; --startX: -500px; --startY: 500px;  animation-delay: 1.1s; }
+.p12 { background: #fad0c4; --startX: 500px;  --startY: 500px;  animation-delay: 1.2s; }
+.p13 { background: #84fab0; --startX: -500px; --startY: -500px; animation-delay: 1.3s; }
+.p14 { background: #8fd3f4; --startX: 500px;  --startY: -500px; animation-delay: 1.4s; }
+.p15 { background: #a6c1ee; --startX: -500px; --startY: 500px;  animation-delay: 1.5s; }
+.p16 { background: #fbc2eb; --startX: 500px;  --startY: 500px;  animation-delay: 1.6s; }
+
+.puzzle-container::after {
+    content: 'Готово!';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 0 0 10px #000, 0 0 20px #fff;
+    opacity: 0;
+    animation: popText 0.5s ease-out 2.2s forwards;
+    pointer-events: none;
+    z-index: 20;
+}
+
+@keyframes popText {
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}

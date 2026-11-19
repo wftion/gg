@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f7f6;
+    font-family: Arial, sans-serif;
+    padding-top: 50px;
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 24px;
+}
+
+.scene {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    background-color: #e0f7fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.vase {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 150px;
+    background: linear-gradient(to right, #d4af37, #ffdf00, #d4af37);
+    border-radius: 10px 10px 40px 40px;
+    z-index: 10;
+    box-shadow: inset -10px 0 20px rgba(0,0,0,0.2), 5px 5px 15px rgba(0,0,0,0.3);
+}
+
+.vase::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 30px;
+    background: #b8860b;
+    border-radius: 10px;
+    z-index: 11;
+}
+
+.flower {
+    position: absolute;
+    bottom: 180px;
+    left: 50%;
+    width: 4px;
+    background-color: #2e7d32;
+    transform-origin: bottom center;
+    z-index: 5;
+}
+
+.f1 { height: 150px; transform: translateX(-50%) rotate(0deg); }
+.f1 .bud {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: #e53935;
+    border-radius: 50% 50% 50% 0;
+    box-shadow: -10px -10px 0 #d32f2f, 10px 10px 0 #b71c1c;
+}
+
+.f2 { height: 180px; transform: translateX(-50%) rotate(-30deg); }
+.f2 .bud {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 35px;
+    height: 35px;
+    background-color: #f48fb1;
+    border-radius: 50%;
+    box-shadow: 5px -5px 0 #f06292, -5px 5px 0 #e91e63;
+}
+
+.f3 { height: 170px; transform: translateX(-50%) rotate(35deg); }
+.f3 .bud {
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 38px;
+    height: 38px;
+    background-color: #fdd835;
+    border-radius: 50%;
+    box-shadow: -8px 0 0 #fbc02d, 8px 0 0 #f9a825;
+}
+
+.f4 { height: 120px; transform: translateX(-50%) rotate(-50deg); }
+.f4 .bud {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: #8e24aa;
+    border-radius: 50% 0 50% 50%;
+}
+
+.leaf {
+    position: absolute;
+    width: 30px;
+    height: 15px;
+    background-color: #4caf50;
+    border-radius: 0 50% 0 50%;
+}
+
+.f1 .leaf { top: 60px; left: 5px; transform: rotate(30deg); }
+.f2 .leaf { top: 80px; right: 5px; transform: rotate(-60deg); }
+.f3 .leaf { top: 50px; left: 5px; transform: rotate(45deg); }
