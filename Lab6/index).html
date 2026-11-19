@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заявка на ремонт ноутбука</title>
+    <link rel="stylesheet" href="css/style).css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Заявка на ремонт ноутбука</h2>
+
+        <div id="successMessage" class="success-message" style="display: none;"></div>
+
+        <form id="repairForm">
+            <div class="form-group">
+                <label for="name">Ваше имя</label>
+                <input type="text" id="name" name="name" placeholder="Введите имя">
+                <span class="error-text" id="error-name"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Телефон</label>
+                <input type="tel" id="phone" name="phone" placeholder="+7 (999) 999-99-99">
+                <span class="error-text" id="error-phone"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="example@mail.ru">
+                <span class="error-text" id="error-email"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="brand">Марка ноутбука</label>
+                <select id="brand" name="brand">
+                    <option value="">Выберите марку...</option>
+                    <option value="asus">ASUS</option>
+                    <option value="acer">Acer</option>
+                    <option value="lenovo">Lenovo</option>
+                    <option value="hp">HP</option>
+                    <option value="apple">Apple</option>
+                    <option value="other">Другая</option>
+                </select>
+                <span class="error-text" id="error-brand"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="model">Модель ноутбука</label>
+                <input type="text" id="model" name="model" placeholder="Например, IdeaPad 3">
+                <span class="error-text" id="error-model"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="problem">Описание неисправности</label>
+                <textarea id="problem" name="problem" rows="4" placeholder="Опишите, что случилось с ноутбуком..."></textarea>
+                <span class="error-text" id="error-problem"></span>
+            </div>
+
+            <div class="form-group radio-group">
+                <span class="label-text">Срочность ремонта</span>
+                <div class="radio-options">
+                    <label>
+                        <input type="radio" name="urgency" value="Стандартный (3-5 дней)" checked> Стандартный (3-5 дней)
+                    </label>
+                    <label>
+                        <input type="radio" name="urgency" value="Срочный (1 день)"> Срочный (1 день)
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label>
+                    <input type="checkbox" id="agreement" name="agreement">
+                    Я согласен на обработку персональных данных
+                </label>
+                <span class="error-text" id="error-agreement"></span>
+            </div>
+
+            <button type="submit" class="submit-btn">Отправить заявку</button>
+
+        </form>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
